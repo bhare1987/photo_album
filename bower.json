@@ -1,0 +1,22 @@
+{
+  "name": "photo_albums",
+  "homepage": "https://github.com/bhare1987/photo_album",
+  "authors": [
+    "bhare1987 <brandonlhare@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "jquery": "^2.2.0"
+  }
+}
