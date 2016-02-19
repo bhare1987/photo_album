@@ -6,11 +6,11 @@
   display: block !important; }
 
 header {
-  height: 200px;
+  height: 100px;
   background: -webkit-linear-gradient(0deg, #0F5FB2, black); }
   header h1 {
     margin: 0;
-    padding-top: 4%;
+    padding-top: 2%;
     font-weight: bold;
     font-size: 3em;
     text-align: center;
@@ -52,14 +52,36 @@ header {
   display: none; }
 
 .imagesContainer {
-  display: none; }
+  display: none;
+  background-color: #97c6f6; }
 
 .images {
   display: inline-block;
-  width: 65%;
-  vertical-align: top; }
+  width: 67%;
+  vertical-align: top;
+  margin-left: 1.5%; }
 
 .sideNav {
   display: inline-block;
   vertical-align: top;
-  width: 30%; }
+  width: 30%;
+  background-color: #072d54;
+  color: #fff;
+  height: 1000px; }
+  .sideNav h2 {
+    text-align: center; }
+  .sideNav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    .sideNav ul li {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0; }
+      .sideNav ul li:hover {
+        cursor: pointer;
+        background-color: #97c6f6; }
+
+footer {
+  height: 100px;
+  background: -webkit-linear-gradient(0deg, #0F5FB2, black); }

@@ -1,9 +1,11 @@
 .imagesContainer {
   display: none;
+  background-color: $lightestColor;
 }
 
 .images {
   display: inline-block;
-  width: 65%;
+  width: 67%;
   vertical-align: top;
+  margin-left: 1.5%;
 }
