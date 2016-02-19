@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var images = imageMap(imgs);
+
   $(".albums").append(buildAlbumRows(albumMap(imgs)));
   $("i").addClass("fa-lg");
   $(".sideNav").append(buildSideNav(albumMap(imgs)));
@@ -8,8 +9,8 @@ $(document).ready(function(){
   }, function(){
     $(this).children("i").addClass("fa-folder-o").removeClass("fa-folder-open-o");
   });
+
   $(".rowItem[data-type='album']").on("click", function() {
-    // var images = imageMap(imgs);
     var albumName = $(this).children("img").attr("rel");
     var result = images.filter(function(el){
       return el.album === albumName;
@@ -20,8 +21,8 @@ $(document).ready(function(){
     var sideNavItem = ".sideNav [rel='" + albumName + "']";
     $(sideNavItem).addClass("activeAlbum");
   });
+
   $(".sideNav li").on("click", function(){
-    // var images = imageMap(imgs);
     var albumName = $(this).attr("rel");
     var result = images.filter(function(el){
       return el.album === albumName;
@@ -31,6 +32,7 @@ $(document).ready(function(){
     $(this).siblings().removeClass("activeAlbum");
     $(this).addClass("activeAlbum");
   });
+
   $(".images").on("click", ".rowItem[data-type='image']", function(){
     var photo = $(this).children("img").attr("rel");
     var photoPath = images.filter(function(el){
@@ -54,8 +56,13 @@ $(document).ready(function(){
     $(".imagesContainer").addClass("active");
     $(".images").html("<h2>Images</h2>");
     $(".images").append(buildImageRows(result));
-    $(this).siblings().removeClass("activeAlbum");
-    $(this).addClass("activeAlbum");
+  });
+
+  $(".sideNav h2").on("click", function(){
+    $(".imagesContainer").removeClass("active");
+    $(".images").html("");
+    $(".sideNav li").removeClass("activeAlbum");
+    $(".albums").addClass("active");
   });
 
 });
