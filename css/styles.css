@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif; }
+
+header {
+  height: 200px;
+  background: -webkit-linear-gradient(0deg, #0F5FB2, black); }
+  header h1 {
+    margin: 0;
+    padding-top: 4%;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    color: #fff; }

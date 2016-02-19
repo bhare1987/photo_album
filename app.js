@@ -1,23 +1,55 @@
-// function buildAlbumRows(array) {
-//   var row = "<div class='row'";
-//   array.forEach(function(el, idx){
-//     row += "<div class='rowItem'>"
-//         + "<img src='"
-//         + el.
-//     if (idx % 3 === 0) {
-//
-//     }
-//   })
-// }
+$(document).ready(function(){
+  $(".albums").html(buildAlbumRows(albumMap(imgs)));
+  $(".images").html(buildImageRows(imageMap(imgs)));
+
+
+});
+
+function buildAlbumRows(array) {
+  var row = "<div class='row'>";
+  array.forEach(function(el, idx, arr){
+    row += "<div class='rowItem'>"
+        + "<img src='"
+        + el.url + el.cover + ".jpeg"
+        + "' rel='" + el.name + "'>"
+        + "<span>"
+        + el.name
+        + "</span>"
+        + "</div>"
+    if ((idx + 1) % 3 === 0 || (idx + 1) === arr.length) {
+      row += "</div>";
+    }
+    if ((idx + 1) % 3 === 0 && (idx + 1) !== arr.length) {
+      row += "<div class='row'>"
+    }
+  });
+  return row;
+}
 
 function buildImageRows(array) {
-  var row = "<div class="
+  var row = "<div class='row'>";
+  array.forEach(function(el, idx, arr){
+    row += "<div class='rowItem'>"
+        + "<img src='"
+        + el.photo_path
+        + "' rel='" + el.photo_name + "'>"
+        + "<span>"
+        + el.photo_name
+        + "</span>"
+        + "</div>"
+    if ((idx + 1) % 3 === 0 || (idx + 1) === arr.length) {
+      row += "</div>";
+    }
+    if ((idx + 1) % 3 === 0 && (idx + 1) !== arr.length) {
+      row += "<div class='row'>"
+    }
+  });
+  return row;
 }
 
 function albumMap(array){
   var result = array.map(function(el){
     return {
-      type: "album",
       name: el.album,
       url: el.album_url,
       cover: el.album_cover

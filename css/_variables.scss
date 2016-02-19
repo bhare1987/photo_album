@@ -1,0 +1,8 @@
+$mainColor: #0F5FB2;
+$lightColor: lighten($mainColor, 20%);
+$lightestColor: lighten($mainColor, 40%);
+$darkColor: darken($mainColor, 20%);
+$darkestColor: darken($mainColor, 40%);
+$accentColor: #666;
+$border: 1px solid $accentColor;
+$fontFamily: 'Raleway', sans-serif;

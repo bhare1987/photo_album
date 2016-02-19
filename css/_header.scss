@@ -1,0 +1,12 @@
+header {
+  height: 200px;
+  background: -webkit-linear-gradient(0deg, $mainColor, $darkestColor);
+  h1 {
+    margin: 0;
+    padding-top: 4%;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    color: #fff
+  }
+}
