@@ -4,5 +4,6 @@ $lightestColor: lighten($mainColor, 40%);
 $darkColor: darken($mainColor, 20%);
 $darkestColor: darken($mainColor, 40%);
 $accentColor: #666;
+$accentColorHover: lighten($accentColor, 20%);
 $border: 1px solid $accentColor;
 $fontFamily: 'Raleway', sans-serif;

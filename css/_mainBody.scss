@@ -6,12 +6,17 @@
 .row {
   margin: 30px 0;
   .rowItem {
+    position: relative;
     display: inline-block;
     width: 30%;
     margin-right: 4.75%;
     vertical-align: top;
     &:last-child {
       margin-right: 0;
+    }
+    &:hover img {
+      cursor: pointer;
+      box-shadow: 0 0 2px $accentColor;
     }
     img {
       width: 100%;
@@ -21,6 +26,14 @@
       display: block;
       text-align: center;
       text-transform: capitalize;
+    }
+    i {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 2%;
+      left: 2%;
+      color: $accentColor;
     }
   }
 }
