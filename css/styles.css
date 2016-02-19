@@ -98,3 +98,25 @@ footer {
   .imageDisplay img {
     width: 100%;
     height: 100%; }
+
+.backToAlbums {
+  display: block;
+  width: 25%;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #072d54;
+  text-align: center;
+  border-radius: 3px;
+  color: #fff; }
+  .backToAlbums::before {
+    content: '\f053';
+    font-family: "fontawesome";
+    color: #fff;
+    display: inline-block;
+    margin-right: 5px; }
+  .backToAlbums:hover {
+    cursor: pointer;
+    background-color: #3992ee;
+    color: #666; }
+    .backToAlbums:hover::before {
+      color: #666; }
