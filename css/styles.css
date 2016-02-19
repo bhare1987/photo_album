@@ -12,3 +12,24 @@ header {
     font-size: 3em;
     text-align: center;
     color: #fff; }
+
+.mainBody {
+  width: 960px;
+  margin: 0 auto; }
+
+.row {
+  margin: 30px 0; }
+  .row .rowItem {
+    display: inline-block;
+    width: 30%;
+    margin-right: 4.75%;
+    vertical-align: top; }
+    .row .rowItem:last-child {
+      margin-right: 0; }
+    .row .rowItem img {
+      width: 100%;
+      height: auto; }
+    .row .rowItem span {
+      display: block;
+      text-align: center;
+      text-transform: capitalize; }

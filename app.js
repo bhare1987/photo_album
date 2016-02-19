@@ -2,7 +2,6 @@ $(document).ready(function(){
   $(".albums").html(buildAlbumRows(albumMap(imgs)));
   $(".images").html(buildImageRows(imageMap(imgs)));
 
-
 });
 
 function buildAlbumRows(array) {
@@ -10,7 +9,7 @@ function buildAlbumRows(array) {
   array.forEach(function(el, idx, arr){
     row += "<div class='rowItem'>"
         + "<img src='"
-        + el.url + el.cover + ".jpeg"
+        + el.url + "thumbnails/" + el.cover + ".png"
         + "' rel='" + el.name + "'>"
         + "<span>"
         + el.name
@@ -31,7 +30,7 @@ function buildImageRows(array) {
   array.forEach(function(el, idx, arr){
     row += "<div class='rowItem'>"
         + "<img src='"
-        + el.photo_path
+        + el.photo_path_thumb
         + "' rel='" + el.photo_name + "'>"
         + "<span>"
         + el.photo_name
