@@ -82,6 +82,9 @@ header {
         cursor: pointer;
         background-color: #97c6f6; }
 
+.activeAlbum {
+  background-color: #97c6f6; }
+
 footer {
   height: 100px;
   background: -webkit-linear-gradient(0deg, #0F5FB2, black); }

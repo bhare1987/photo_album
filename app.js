@@ -16,8 +16,20 @@ $(document).ready(function(){
     $(".images").append(buildImageRows(images));
     $(".imagesContainer").addClass("active");
     $(".albums").removeClass("active");
+    var sideNavItem = ".sideNav [rel='" + albumName + "']";
+    $(sideNavItem).addClass("activeAlbum");
   });
-
+  $(".sideNav li").on("click", function(){
+    var images = imageMap(imgs);
+    var albumName = $(this).attr("rel");
+    images = images.filter(function(el){
+      return el.album === albumName;
+    });
+    $(".images").html("<h2>Images</h2>");
+    $(".images").append(buildImageRows(images));
+    $(this).siblings().removeClass("activeAlbum");
+    $(this).addClass("activeAlbum");
+  });
 });
 
 function buildAlbumRows(array) {
@@ -89,7 +101,10 @@ function imageMap(array){
 function buildSideNav(array) {
   var sideNav = "<ul>";
   array.forEach(function(el){
-    sideNav += "<li>" + el.name + "</li>"
+    sideNav += "<li rel='"
+            + el.name
+            + "'>"
+            + el.name + "</li>"
   });
   sideNav += "</ul>";
   return sideNav;
