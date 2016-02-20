@@ -102,7 +102,8 @@ footer {
 
 .imageDisplayContainer {
   display: none;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 .imageDisplay {
   width: 100%;
@@ -110,6 +111,24 @@ footer {
   .imageDisplay img {
     width: 100%;
     height: 100%; }
+  .imageDisplay .imgLeft {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    color: white;
+    text-shadow: 1px 1px #666; }
+    .imageDisplay .imgLeft:hover {
+      cursor: pointer;
+      color: #999999; }
+  .imageDisplay .imgRight {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    color: white;
+    text-shadow: 1px 1px #666; }
+    .imageDisplay .imgRight:hover {
+      cursor: pointer;
+      color: #999999; }
 
 .backToAlbums {
   display: block;

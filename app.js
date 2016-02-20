@@ -65,6 +65,40 @@ $(document).ready(function(){
     $(".albums").addClass("active");
   });
 
+  $(".imageDisplayContainer span.imgLeft").on("click", function(){
+    var curImg = $(".imageDisplayContainer img").attr("src");
+    var album = $(".backToAlbums").attr("rel");
+    var result = "";
+    images.forEach(function(el, idx, arr){
+      if(el.photo_path_hr === curImg){
+        if (el.album === album && idx !== 0 && arr[idx - 1].album === album){
+        return result = arr[(idx - 1)].photo_path_hr;
+        }
+        return result;
+      }
+    });
+    if (result) {
+      $(".imageDisplayContainer img").attr("src", result);
+    }
+  });
+
+  $(".imageDisplayContainer span.imgRight").on("click", function(){
+    var curImg = $(".imageDisplayContainer img").attr("src");
+    var album = $(".backToAlbums").attr("rel");
+    var result = "";
+    images.forEach(function(el, idx, arr){
+      if(el.photo_path_hr === curImg){
+        if (el.album === album && idx + 1 !== arr.length && arr[idx + 1].album === album){
+        return result = arr[(idx + 1)].photo_path_hr;
+        }
+        return result;
+      }
+    });
+    if (result) {
+      $(".imageDisplayContainer img").attr("src", result);
+    }
+  });
+
 });
 
 function buildAlbumRows(array) {

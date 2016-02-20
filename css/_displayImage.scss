@@ -1,6 +1,7 @@
 .imageDisplayContainer {
   display: none;
   width: 100%;
+  position: relative;
 }
 
 .imageDisplay {
@@ -9,6 +10,28 @@
   img {
     width: 100%;
     height: 100%;
+  }
+  .imgLeft {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    color: white;
+    text-shadow: 1px 1px $accentColor;
+    &:hover {
+      cursor: pointer;
+      color: lighten($accentColor, 20%);
+    }
+  }
+  .imgRight {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    color: white;
+    text-shadow: 1px 1px $accentColor;
+    &:hover {
+      cursor: pointer;
+      color: lighten($accentColor, 20%);
+    }
   }
 }
 
