@@ -104,16 +104,8 @@ $(document).ready(function(){
 function buildAlbumRows(array) {
   var row = "<div class='row'>";
   array.forEach(function(el, idx, arr){
-    row += "<div class='rowItem' data-type='"
-        + el.type + "'>"
-        + "<i class='fa " + el.icon + "'></i>"
-        + "<img src='"
-        + el.url + "thumbnails/" + el.cover + ".png"
-        + "' rel='" + el.name + "'>"
-        + "<span>"
-        + el.name
-        + "</span>"
-        + "</div>"
+    albumTemp = _.template($('#albumTemp').html());
+    row += albumTemp(el);
     if ((idx + 1) % 3 === 0 || (idx + 1) === arr.length) {
       row += "</div>";
     }
@@ -127,15 +119,8 @@ function buildAlbumRows(array) {
 function buildImageRows(array) {
   var row = "<div class='row'>";
   array.forEach(function(el, idx, arr){
-    row += "<div class='rowItem' data-type='"
-        + el.type + "'>"
-        + "<img name='modal' class='activate_modal' src='"
-        + el.photo_path_thumb
-        + "' rel='" + el.photo_name + "'>"
-        + "<span>"
-        + el.photo_name
-        + "</span>"
-        + "</div>"
+     imgTemp = _.template($('#imgTemp').html());
+     row += imgTemp(el);
     if ((idx + 1) % 3 === 0 || (idx + 1) === arr.length) {
       row += "</div>";
     }
@@ -169,11 +154,9 @@ function imageMap(array){
 
 function buildSideNav(array) {
   var sideNav = "<ul>";
+  var sideNavTemplate = _.template($('#sideNav').html());
   array.forEach(function(el){
-    sideNav += "<li rel='"
-            + el.name
-            + "'>"
-            + el.name + "</li>"
+    sideNav += sideNavTemplate(el)
   });
   sideNav += "</ul>";
   return sideNav;
