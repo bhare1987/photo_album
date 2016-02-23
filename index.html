@@ -7,22 +7,6 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:800,700italic,600italic,600,400,100,100italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
     <title>Photo Gallery</title>
-    <script type="text/template" id="albumTemp">
-        <div class="rowItem" data-type="<%= type %>">
-          <i class='fa <%= icon %>' ></i>
-          <img src='<%= url %>thumbnails/<%= cover %>.png' rel='<%= name %>'/>
-          <span><%= name %></span>
-        </div>
-    </script>
-    <script type="text/template" id="imgTemp">
-        <div class="rowItem" data-type="<%= type %>">
-          <img src='<%= photo_path_thumb %>' rel='<%= photo_name %>'/>
-          <span><%= photo_name %></span>
-        </div>
-    </script>
-    <script type="text/template" id="sideNav">
-      <li rel='<%= name %>'><%= name %></li>
-    </script>
   </head>
   <body>
     <section class="mainBody">

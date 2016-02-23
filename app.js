@@ -1,3 +1,21 @@
+var templates = {};
+templates.albumTemp = [
+  "<div class='rowItem' data-type='<%= type %>'>",
+    "<i class='fa <%= icon %>' ></i>",
+    "<img src='<%= url %>thumbnails/<%= cover %>.png' rel='<%= name %>'/>",
+    "<span><%= name %></span>",
+    "</div>"
+].join("");
+templates.imgTemp = [
+  "<div class='rowItem' data-type='<%= type %>'>",
+    "<img src='<%= photo_path_thumb %>' rel='<%= photo_name %>'/>",
+    "<span><%= photo_name %></span>",
+  "</div>"
+].join("");
+templates.sideNav = [
+  "<li rel='<%= name %>'><%= name %></li>"
+].join("");
+
 $(document).ready(function(){
   var images = imageMap(imgs);
 
@@ -104,7 +122,7 @@ $(document).ready(function(){
 function buildAlbumRows(array) {
   var row = "<div class='row'>";
   array.forEach(function(el, idx, arr){
-    albumTemp = _.template($('#albumTemp').html());
+    albumTemp = _.template(templates.albumTemp);
     row += albumTemp(el);
     if ((idx + 1) % 3 === 0 || (idx + 1) === arr.length) {
       row += "</div>";
@@ -119,7 +137,7 @@ function buildAlbumRows(array) {
 function buildImageRows(array) {
   var row = "<div class='row'>";
   array.forEach(function(el, idx, arr){
-     imgTemp = _.template($('#imgTemp').html());
+     imgTemp = _.template(templates.imgTemp);
      row += imgTemp(el);
     if ((idx + 1) % 3 === 0 || (idx + 1) === arr.length) {
       row += "</div>";
@@ -154,7 +172,7 @@ function imageMap(array){
 
 function buildSideNav(array) {
   var sideNav = "<ul>";
-  var sideNavTemplate = _.template($('#sideNav').html());
+  var sideNavTemplate = _.template(templates.sideNav);
   array.forEach(function(el){
     sideNav += sideNavTemplate(el)
   });
